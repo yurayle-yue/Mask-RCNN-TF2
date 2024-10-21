@@ -17,7 +17,7 @@ Here are the steps to use the project for making predictions:
 
 1. Create a root directory (e.g. **Object Detection**)
 2. Copy the [mrcnn](https://github.com/ahmedfgad/Mask-RCNN-TF2/tree/master/mrcnn) directory inside the root directory.
-3. Download the pre-trained weights inside the root directory. The weights can be downloaded from [this link](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5): https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5.
+3. Download the pre-trained weights inside the root directory. The weights can be downloaded from [this link](https://github.com/ahmedfgad/Mask-RCNN-TF2/releases/download/v3.0/mask_rcnn_coco.h5): https://github.com/ahmedfgad/Mask-RCNN-TF2/releases/download/v3.0/mask_rcnn_coco.h5.
 4. Create a script for object detection and save it inside the root directory. This script is an example: [samples/mask-rcnn-prediction.py](samples/mask-rcnn-prediction.py). Its code is listed in the next section.
 5. Run the script.
 
@@ -32,7 +32,7 @@ Object Detection:
 
 # Code for Prediction/Inference
 
-The next code uses the pre-trained weights of the Mask R-CNN model based on the COCO dataset. The trained weights can be downloaded from [this link](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5): https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5. The code is accessible through the [samples/mask-rcnn-prediction.py](samples/mask-rcnn-prediction.py) script.
+The next code uses the pre-trained weights of the Mask R-CNN model based on the COCO dataset. The trained weights can be downloaded from [this link](https://github.com/ahmedfgad/Mask-RCNN-TF2/releases/download/v3.0/mask_rcnn_coco.h5): https://github.com/ahmedfgad/Mask-RCNN-TF2/releases/download/v3.0/mask_rcnn_coco.h5. The code is accessible through the [samples/mask-rcnn-prediction.py](samples/mask-rcnn-prediction.py) script.
 
 The COCO dataset has 80 classes. There is an additional class for the background named **BG**. Thus, the total number of classes is 81. The classes names are listed in the `CLASS_NAMES` list. **DO NOT CHANGE THE ORDER OF THE CLASSES**.
 
@@ -69,7 +69,7 @@ model = mrcnn.model.MaskRCNN(mode="inference",
                              model_dir=os.getcwd())
 
 # Load the weights into the model.
-# Download the mask_rcnn_coco.h5 file from this link: https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5
+# Download the mask_rcnn_coco.h5 file from this link: https://github.com/ahmedfgad/Mask-RCNN-TF2/releases/download/v3.0/mask_rcnn_coco.h5
 model.load_weights(filepath="mask_rcnn_coco.h5", 
                    by_name=True)
 
@@ -105,7 +105,7 @@ kangaroo-transfer-learning:
 	kangaroo_prediction.py
 ```
 
-The `kangaroo_training.py` script does transfer learning to a pre-trained weights using the COCO dataset. Download these weights from [here](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5): https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5
+The `kangaroo_training.py` script does transfer learning to a pre-trained weights using the COCO dataset. Download these weights from [here](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/https://github.com/ahmedfgad/Mask-RCNN-TF2/releases/download/v3.0/mask_rcnn_coco.h5): https://github.com/ahmedfgad/Mask-RCNN-TF2/releases/download/v3.0/mask_rcnn_coco.h5.
 
 After the transfer learning completes, the trained weights are saved in the `Kangaro_mask_rcnn_trained.h5` file. 
 
@@ -295,7 +295,7 @@ If you use Docker, the code has been verified to work on
     ```bash
     python3 setup.py install
     ```
-3. Download pre-trained COCO weights (mask_rcnn_coco.h5) from the [releases page](https://github.com/matterport/Mask_RCNN/releases).
+3. Download pre-trained COCO weights (mask_rcnn_coco.h5) from the [releases page](https://github.com/ahmedfgad/Mask-RCNN-TF2/releases/).
 4. (Optional) To train or test on MS COCO install `pycocotools` from one of these repos. They are forks of the original pycocotools with fixes for Python3 and Windows (the official repo doesn't seem to be active anymore).
 
     * Linux: https://github.com/waleedka/coco
