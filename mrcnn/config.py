@@ -1,3 +1,5 @@
+import tensorflow as tf
+tf.compat.v1.disable_eager_execution()
 """
 Mask R-CNN
 Base Configurations class.
@@ -227,10 +229,17 @@ class Config(object):
         # See compose_image_meta() for details
         self.IMAGE_META_SIZE = 1 + 3 + 3 + 4 + 1 + self.NUM_CLASSES
 
+    def to_dict(self):
+        return {a: getattr(self, a)
+                for a in sorted(dir(self))
+                if not a.startswith("__") and not callable(getattr(self, a))}
+
     def display(self):
         """Display Configuration values."""
         print("\nConfigurations:")
-        for a in dir(self):
-            if not a.startswith("__") and not callable(getattr(self, a)):
-                print("{:30} {}".format(a, getattr(self, a)))
+        for key, val in self.to_dict().items():
+            print(f"{key:30} {val}")
+        # for a in dir(self):
+        #     if not a.startswith("__") and not callable(getattr(self, a)):
+        #         print("{:30} {}".format(a, getattr(self, a)))
         print("\n")
