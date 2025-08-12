@@ -1644,7 +1644,7 @@ def generate_random_rois(image_shape, count, gt_class_ids, gt_boxes):
 
 class DataGenerator(KU.Sequence):
     """An iterable that returns images and corresponding target class ids,
-        bounding box deltas, and masks. It inherits from keras.utils.Sequence to avoid data redundancy
+        bounding box deltas, and masks. It inherits from tensorflow.keras.utils.Sequence to avoid data redundancy
         when multiprocessing=True.
 
         dataset: The Dataset object to pick data from
@@ -2145,7 +2145,7 @@ class MaskRCNN(object):
         """Downloads ImageNet trained weights from Keras.
         Returns path to weights file.
         """
-        from keras.utils.data_utils import get_file
+        from tensorflow.keras.utils.data_utils import get_file
         TF_WEIGHTS_PATH_NO_TOP = 'https://github.com/fchollet/deep-learning-models/'\
                                  'releases/download/v0.2/'\
                                  'resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5'
